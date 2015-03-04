@@ -2,6 +2,7 @@ ext/*.o
 ext/*.so
 ext/Makefile
 ext/mkmf.log
+ext/rb_gsl.bundle
 include/rb_gsl_config.h
 lib/gsl.rb
 lib/rbgsl.rb

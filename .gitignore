@@ -9,3 +9,5 @@ lib/rbgsl.rb
 pkg/*.gem
 .config
 InstalledFiles
+.DS_Store
+lib/.DS_Store

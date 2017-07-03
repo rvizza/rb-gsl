@@ -28,7 +28,7 @@ void rb_gsl_error_handler(const char *reason, const char *file,
 			  int line, int gsl_errno)
 {
   const char *emessage = gsl_strerror(gsl_errno);
-  rb_raise(pgsl_error[gsl_errno], 
+  rb_raise(pgsl_error[gsl_errno],
 	   "Ruby/GSL error code %d, %s (file %s, line %d), %s",
 	   gsl_errno, reason, file, line, emessage);
 }
@@ -81,9 +81,9 @@ static void rb_gsl_define_exceptions(VALUE module)
   VALUE mgsl_error;
   mgsl_error = rb_define_module_under(module, "ERROR");
   pgsl_error = &cgsl_error[2];
-  pgsl_error[-2] = rb_define_class_under(mgsl_error, "CONTINUE", rb_cFixnum);
+  pgsl_error[-2] = rb_define_class_under(mgsl_error, "CONTINUE", rb_cInteger);
   pgsl_error[-1] = rb_define_class_under(mgsl_error, "FAILURE", rb_eRuntimeError);
-  pgsl_error[0] = rb_define_class_under(mgsl_error, "SUCCESS", rb_cFixnum);
+  pgsl_error[0] = rb_define_class_under(mgsl_error, "SUCCESS", rb_cInteger);
   pgsl_error[1] = rb_define_class_under(mgsl_error, "EDOM", rb_eRangeError);
   pgsl_error[2] = rb_define_class_under(mgsl_error, "ERANGE", rb_eRangeError);
   pgsl_error[3] = rb_define_class_under(mgsl_error, "EFAULT", rb_eRuntimeError);
@@ -167,9 +167,9 @@ static void define_module_functions(VALUE module);
 static VALUE rb_gsl_strerror(VALUE obj, VALUE errn);
 static void define_module_functions(VALUE module)
 {
-  rb_define_module_function(module, "set_error_handler_off", 
+  rb_define_module_function(module, "set_error_handler_off",
 			    rb_gsl_set_error_handler_off, 0);
-  rb_define_module_function(module, "strerror", 
+  rb_define_module_function(module, "strerror",
 			    rb_gsl_strerror, 1);
   rb_define_module_function(module, "set_error_handler",
 			    rb_gsl_set_error_handler, -1);

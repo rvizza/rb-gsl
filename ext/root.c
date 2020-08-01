@@ -15,7 +15,7 @@
 #include "rb_gsl_function.h"
 #include "rb_gsl_root.h"
 
-EXTERN VALUE cgsl_function_fdf;
+RUBY_EXTERN VALUE cgsl_function_fdf;
 
 enum {
   GSL_ROOT_FSOLVER_BISECTION,

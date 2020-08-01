@@ -24,6 +24,6 @@
 #endif
 #include <gsl/gsl_const_num.h>
 
-EXTERN VALUE mgsl_const_mks, mgsl_const_cgs;
+RUBY_EXTERN VALUE mgsl_const_mks, mgsl_const_cgs;
 
 #endif

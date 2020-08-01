@@ -27,7 +27,7 @@ static VALUE cgsl_monte_function;
 #ifdef GSL_1_13_LATER
 static VALUE cgsl_monte_miser_params, cgsl_monte_vegas_params;
 #endif
-EXTERN VALUE cgsl_vector;
+RUBY_EXTERN VALUE cgsl_vector;
 
 enum {
   GSL_MONTE_PLAIN_STATE = 1,

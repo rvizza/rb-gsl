@@ -116,7 +116,7 @@ void Init_tensor_int_init(VALUE module);
 
 void Init_gsl_dirac(VALUE module);
 
-EXTERN VALUE cGSL_Object;
+RUBY_EXTERN VALUE cGSL_Object;
 
 void Init_tamu_anova(VALUE module);
 

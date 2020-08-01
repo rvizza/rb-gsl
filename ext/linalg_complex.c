@@ -15,8 +15,8 @@
 #include "rb_gsl_common.h"
 #include "rb_gsl_linalg.h"
 
-EXTERN VALUE mgsl_linalg;
-EXTERN VALUE cgsl_complex;
+RUBY_EXTERN VALUE mgsl_linalg;
+RUBY_EXTERN VALUE cgsl_complex;
 
 static VALUE cgsl_matrix_complex_LU;
 #ifdef GSL_1_10_LATER

@@ -7,7 +7,7 @@
 //#include <tensor/tensor.h>
 #include <tensor/tensor.h>
 
-EXTERN VALUE cgsl_tensor, cgsl_tensor_int;
+RUBY_EXTERN VALUE cgsl_tensor, cgsl_tensor_int;
 
 enum {
   TENSOR_ADD,

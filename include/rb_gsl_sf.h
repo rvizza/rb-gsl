@@ -20,7 +20,7 @@
 #include "rb_gsl_config.h"
 #include "rb_gsl.h"
 
-EXTERN VALUE cgsl_sf_result, cgsl_sf_result_e10;
+RUBY_EXTERN VALUE cgsl_sf_result, cgsl_sf_result_e10;
 
 VALUE rb_gsl_sf_result_new(VALUE klass);
 

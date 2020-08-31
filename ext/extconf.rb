@@ -69,22 +69,22 @@ def check_version(configfile)
     puts ENV["PATH"]
 
     puts "pwd"
-    puts run("pwd")
+    puts system("pwd")
     puts "ls"
-    puts run("ls")
+    puts system("ls")
     puts "ls ./app"
-    puts run("ls ./app")
+    puts system("ls ./app")
     puts "ls ./app/vendor"
-    puts run("ls ./app/vendor")
+    puts system("ls ./app/vendor")
     puts "ls ./app/vendor/gsl"
-    puts run("ls ./app/vendor/gsl")
+    puts system("ls ./app/vendor/gsl")
     puts "ls ./app/vendor/gsl/bin"
-    puts run("ls ./app/vendor/gsl/bin")
+    puts system("ls ./app/vendor/gsl/bin")
 
     puts "ls /tmp"
-    puts run("ls /tmp")
+    puts system("ls /tmp")
     puts "ls /tmp/build_33c3fcd3"
-    puts run("ls /tmp/build_33c3fcd3")
+    puts system("ls /tmp/build_33c3fcd3")
 
   IO.popen("#{GSL_CONFIG} --version") do |f|
 

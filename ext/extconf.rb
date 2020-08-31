@@ -66,6 +66,9 @@ def check_version(configfile)
   
   print("checking gsl version... ")
   IO.popen("#{GSL_CONFIG} --version") do |f|
+
+    puts ENV["PATH"]
+
     ver = GSL::Version.new(f.gets.chomp)
     puts(ver)
     configfile.printf("#ifndef GSL_VERSION\n#define GSL_VERSION \"#{ver}\"\n#endif\n")

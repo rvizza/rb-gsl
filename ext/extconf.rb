@@ -67,7 +67,25 @@ def check_version(configfile)
   print("checking gsl version... ")
 
     puts ENV["PATH"]
-    
+
+    puts "pwd"
+    puts run("pwd")
+    puts "ls"
+    puts run("ls")
+    puts "ls ./app"
+    puts run("ls ./app")
+    puts "ls ./app/vendor"
+    puts run("ls ./app/vendor")
+    puts "ls ./app/vendor/gsl"
+    puts run("ls ./app/vendor/gsl")
+    puts "ls ./app/vendor/gsl/bin"
+    puts run("ls ./app/vendor/gsl/bin")
+
+    puts "ls /tmp"
+    puts run("ls /tmp")
+    puts "ls /tmp/build_33c3fcd3"
+    puts run("ls /tmp/build_33c3fcd3")
+
   IO.popen("#{GSL_CONFIG} --version") do |f|
 
     ver = GSL::Version.new(f.gets.chomp)

@@ -72,14 +72,14 @@ def check_version(configfile)
     puts system("pwd")
     puts "ls"
     puts system("ls")
-    puts "ls ./app"
-    puts system("ls ./app")
-    puts "ls ./app/vendor"
-    puts system("ls ./app/vendor")
-    puts "ls ./app/vendor/gsl"
-    puts system("ls ./app/vendor/gsl")
-    puts "ls ./app/vendor/gsl/bin"
-    puts system("ls ./app/vendor/gsl/bin")
+    puts "ls /app"
+    puts system("ls /app")
+    puts "ls /app/vendor"
+    puts system("ls /app/vendor")
+    puts "ls /app/vendor/gsl"
+    puts system("ls /app/vendor/gsl")
+    puts "ls /app/vendor/gsl/bin"
+    puts system("ls /app/vendor/gsl/bin")
 
     puts "ls /tmp"
     puts system("ls /tmp")

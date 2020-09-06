@@ -39,7 +39,8 @@ end
 def gsl_config()
   print("checking gsl cflags... ")
   IO.popen("#{GSL_CONFIG} --cflags") do |f|
-    cflags = f.gets.chomp + " " + ENV["CPPFLAGS"]
+    cflags = f.gets.chomp
+    cflags += " " + ENV["CPPFLAGS"]
     puts(cflags)
     $CFLAGS += " " + cflags
 
@@ -55,7 +56,8 @@ def gsl_config()
   end
   
   IO.popen("#{GSL_CONFIG} --libs") do |f|
-    libs = f.gets.chomp + " -l" + ENV["LD_LIBRARY_PATH"]
+    libs = f.gets.chomp
+    libs += " -l" + ENV["LD_LIBRARY_PATH"]
     dir_config("cblas")
     dir_config("atlas")
     if have_library("cblas") and have_library("atlas")

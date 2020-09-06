@@ -41,7 +41,8 @@ def gsl_config()
   IO.popen("#{GSL_CONFIG} --cflags") do |f|
     cflags = f.gets.chomp
     puts(cflags)
-    $CFLAGS += " " + cflags + " " + ENV["CPPFLAGS"]
+    $CFLAGS += " " + cflags
+    $CFLAGS += " " + ENV["CPPFLAGS"] unless ENV["CPPFLAGS"].empty?
 
     puts "CPPFLAGS"
     puts ENV["CPPFLAGS"]
@@ -64,7 +65,7 @@ def gsl_config()
     else
       $LOCAL_LIBS += " " + libs
     end
-    $LOCAL_LIBS += " -l" + ENV["LD_LIBRARY_PATH"]
+    $LOCAL_LIBS += " -l" + ENV["LD_LIBRARY_PATH"] unless ENV["LD_LIBRARY_PATH"].empty?
     print("checking gsl libs... ")
     puts(libs)
     puts "$LOCAL_LIBS"

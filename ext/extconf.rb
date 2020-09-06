@@ -42,6 +42,16 @@ def gsl_config()
     cflags = f.gets.chomp
     puts(cflags)
     $CFLAGS += " " + cflags
+
+    puts "CPPFLAGS"
+    puts ENV["CPPFLAGS"]
+    puts "CFLAGS"
+    puts $CFLAGS
+    puts "pwd"
+    puts system("pwd")
+
+
+
   end
   
   IO.popen("#{GSL_CONFIG} --libs") do |f|
@@ -66,6 +76,7 @@ def check_version(configfile)
   
   print("checking gsl version... ")
 
+    puts "PATH"
     puts ENV["PATH"]
     puts "pwd"
     puts system("pwd")

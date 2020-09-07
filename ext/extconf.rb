@@ -70,6 +70,8 @@ def gsl_config()
     puts(libs)
     puts "$LOCAL_LIBS"
     puts $LOCAL_LIBS
+    puts "BUILD_PATH"
+    puts ENV["BUILD_PATH"]
   end
 
 end

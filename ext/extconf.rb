@@ -42,10 +42,10 @@ def gsl_config()
     cflags = f.gets.chomp
     puts(cflags)
     $CFLAGS += " " + cflags
-    if ENV["CPPFLAGS"].blank?
-      puts "it is blank"
-    else
+    if ENV.key?( "CPPFLAGS" )
       puts "it is not blank"
+    else
+      puts "it is blank"
     end
     # ($CFLAGS += " " + ENV["CPPFLAGS"]) unless ENV["CPPFLAGS"].blank?
 

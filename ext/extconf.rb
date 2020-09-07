@@ -65,7 +65,7 @@ def gsl_config()
     else
       $LOCAL_LIBS += " " + libs
     end
-    # $LOCAL_LIBS += " -l" + ENV["LD_LIBRARY_PATH"] unless ENV["LD_LIBRARY_PATH"].empty?
+    ($LOCAL_LIBS += " " + ENV["LD_LIBRARY_PATH"]) if ENV.key?( "LD_LIBRARY_PATH" )
     print("checking gsl libs... ")
     puts(libs)
     puts "$LOCAL_LIBS"

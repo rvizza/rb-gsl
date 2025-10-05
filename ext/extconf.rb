@@ -135,8 +135,7 @@ def check_version(configfile)
 end
 
 #####
-
-$CFLAGS = " -Wall -I../include "
+$CFLAGS = " -Wno-error=incompatible-function-pointer-types -Wno-error=int-conversion -Wno-error=implicit-function-declaration -Wall -I../include "
 
 begin
   RB_GSL_CONFIG = File.open("../include/rb_gsl_config.h", "w")
